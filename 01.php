@@ -24,3 +24,5 @@ $test->arr[] = "2";
 echo $a;
 
 ?>
+
+LOCAL --- Some new text
