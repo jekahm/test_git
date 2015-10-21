@@ -1,0 +1,14 @@
+<?php
+function add($date_str, $months)
+{
+	$date = new DateTime($date_str);
+	$start_day = $date->format('j');
+	$date->modify("+{$months} month");
+	$end_day = $date->format('j');
+	if ($start_day != $end_day)
+		$date->modify('last day of last month');
+	return $date;
+}
+$result = add('2018-01-29', 1);  // 2011-02-28
+echo $result->format("Y-m-d");
+?>
