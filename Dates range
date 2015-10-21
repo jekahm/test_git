@@ -1,1 +1,15 @@
 
+<?php
+
+$start    = new DateTime('2016-01-31');
+$start->modify('first day of this month');
+$end      = new DateTime('2017-12-31');
+$end->modify('first day of next month');
+$interval = DateInterval::createFromDateString('1 month');
+$period   = new DatePeriod($start, $interval, $end);
+
+foreach ($period as $dt) {
+    echo $dt->format("Y || m-F") . "<br>\n";
+}
+
+?>
